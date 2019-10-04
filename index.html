@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Prince Movie Trivia</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="assets/javascript/app.js"></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <header id="gradl">
+        <h1>Under the Graffiti Rain Trivia</h1>
+      </header>
+    </div>
+
+    <div class="containerWelcome">
+        <p>
+            For each song provided, choose which movie you think it was associated with.  Click "Start Game" to begin. Good luck!
+        </p>
+        
+        <button id="start">Start Game</button>
+        <button id="stop">Stop</button> 
+        <button id="resume">Resume</button>        
+    </div>
+    <!-- <br /> -->
+    <div class="flex-container">
+      <div class="containerTimer">
+        <aside id="timer">
+          <div id="show-number"></div>
+        </aside>
+      </div>
+      <!-- <div id="time-left"></div> -->
+      <div class="containerQuestion">
+        <section id="questions">
+          <h1>Song</h1>
+          <br />
+          <div id="soundtrackSong"></div>
+          <br />
+          <p>Which of these Prince soundtracks is this song from?</p>
+          <!-- <br /> -->
+          <!-- Inline Radios -->
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="inlineRadioOptions"
+              id="inlineRadio1"
+              value="option1"
+            />
+            <label class="form-check-label" for="inlineRadio1">Purple Rain</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="inlineRadioOptions"
+              id="inlineRadio2"
+              value="option2"
+            />
+            <label class="form-check-label" for="inlineRadio2">Under the Cherry Moon</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="inlineRadioOptions"
+              id="inlineRadio3"
+              value="option3"
+            />
+            <label class="form-check-label" for="inlineRadio3"
+              >Batman</label
+            >
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="inlineRadioOptions"
+              id="inlineRadio4"
+              value="option4"
+            />
+            <label class="form-check-label" for="inlineRadio3"
+              >Graffiti Bridge</label
+            >
+          </div>
+        </section>
+      </div>
+    </div>
+    <br />
+    
+
+    <!-- <br /> -->
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

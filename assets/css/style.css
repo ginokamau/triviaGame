@@ -1,0 +1,124 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background: url('../images/princeBkgrnd.jpg') no-repeat center fixed;
+    background-size: cover;
+    background-color: rgb(9, 1, 17);
+	text-align: center;
+	font-family: arial;
+	font-size: 18px;
+}
+
+li{
+	list-style: none;
+	line-height: 2em;
+	text-align: left;
+}
+
+.header{
+    /* background: url('../images/purpleRainPoster.jpg') no-repeat center fixed .25; */
+	background-image: linear-gradient(to right,rgb(195,148,220), rgba(87,36,115,1),rgba(54,22,73,1), rgba(157,80,198,0.5), rgba(195,148,220,1), rgba(252,250,253,.75), rgba(87,36,115,.5), rgb(195,148,220));
+	border-bottom: rgba(252, 250, 253,.75) 3px solid;
+	padding: 20px;
+}
+
+.containerWelcome{
+    color: #f4f4f4;
+    background-color: rgb(87,36,115,.75);
+	width: 650px;
+    margin: 30px auto;
+    padding: 50px 100px;
+	border: rgb(252,250, 253,.75) 3px solid;
+}
+
+.containerTimer{
+    color: rgba(252,250,253,.75);
+    background-color: rgb(157,80,198,.5);
+	width: 650px;
+    margin: 30px auto;
+    padding: 25px;
+	border: rgb(252, 250, 253,.75) 1px solid;
+}
+
+.containerQuestion{
+    color: #f4f4f4;
+    background-color: rgb(87,36,115,.5);
+	width: 650px;
+    margin: 30px auto;
+    padding: 50px 100px;
+	border: rgb(252,250, 253,.75) 3px solid;
+}
+
+#soundtrackSong{
+    background-color: rgb(195,148,220);
+    color: rgb(9, 1, 17);
+    margin: auto;
+    padding: 15px;
+}
+
+#gradl{
+	height: 80px;
+	/*background color: darkred;*/
+	background-image: linear-gradient(to right, rgba(87,36,115,1),rgba(54,22,73,1), rgba(157,80,198,0.5), rgba(195,148,220,1), rgba(252,250,253,.75), rgba(87,36,115,.5));
+    color: #f4f4f4;
+    text-shadow: 2px 2px 4px #000000;
+	padding: 15px;
+	margin: 1em; 
+}
+/* ============================================================= */
+/* body{
+    background-color: rgb(133, 8, 236);
+    color: rgb(215, 178, 245);
+    font-family: impact;
+    text-align: center;
+}
+#topSection{
+    /* border: 2px rgb(55, 4, 97) solid; */
+
+/* }
+#gradl{
+    height: 200px;
+    background-image: linear-gradient(to right, rgb(55, 4, 97,1), rgb(55,4,97,.5), transparent,rgb(55,4,97,1));
+    padding-top: 28px;
+    margin: auto;
+    /* margin: 1em; */
+    /* text-decoration;
+}
+h1{
+    font-size: 54px;
+    text-shadow: 6px 3px rgb(55, 4, 97);
+}
+h3{
+    font-size: 36px;
+    text-shadow: 5px 2px rgb(125, 57, 180);
+}
+.container{
+    width: 80%;
+    margin: 30px auto;
+    overflow: hidden;
+    justify-content: center;
+}
+#questions{ */
+    /* float: left; */
+    /* width: 70%;
+    padding: 0 30px;
+}
+#timer{
+    height: 200px;
+    position: relative; */
+    /* float: right; */
+    /* width: 30%;
+    background-color:  rgb(55, 4, 97);
+    height: 100px;
+    padding: 1px;
+    padding-bottom: 15px;
+     */
+    /* box-shadow: 0 15px; */
+/* }
+#show-number{
+    height: 200px;
+    justify-content: center;
+    z-index: 100px;
+    
+} */ 
