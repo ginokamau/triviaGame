@@ -1,129 +1,129 @@
-// TIMER=================================================
-// // Step 1:
-// // Use the following Audio file below:
-// var audio = new Audio("raven.mp3");
+var card = $("#quiz-area");
 
-// //  Step 2:
-// //  after 5 seconds, execute the fiveSeconds function
-// //  after 10 seconds, execute the tenSeconds function
-// //  after 15 seconds, execute the timeUp function
+// Question
 
-// setTimeout(fiveSeconds, 1000 * 5);
-// setTimeout(tenSeconds, 1000 * 10);
-// setTimeout(timeUp, 1000 * 15);
 
-// //  Step 3:
-// //  Fill in the blanks to these functions.
-// function fiveSeconds() {
-//   // in the element with an id of time-left add an h2 saying About 10 Seconds Left!
-//   // console log 10 seconds left
-//   $("#time-left").append("<h2>About 10 Seconds Left!</h2>");
-//   console.log("10 seconds left");
-// }
+//This is an array of 5 objects 
+var questions = [
+  {
+    question: "What was Prince's first name?",
+    answers: ["Roger", "Prince", "Gino", "Taylor"],
+    correctAnswer: "Prince"
+  },
+  {
+    question: "What was Prince's most famous album?",
+    answers: ["Around the World in a Day", "Girl Scout Cookies", "Purple Rain", "1999"],
+    correctAnswer: "Purple Rain"
+  },
+  {
+    question: "What was Prince's final artist name?",
+    answers: ["Supafly Lover", "Artist formerly known as Prince", "Scandalous", "Detroit Louie"],
+    correctAnswer: "Artist formerly known as Prince"
+  },
+  {
+    question: "Where did Prince live?",
+    answers: ["Paisley Park", "Graffiti Bridge", "Under the Cherry Moon", "Jerry's World"],
+    correctAnswer: "Paisley Park"
+  },
+  {
+    question: "What is a 'foul' inspired Prince song?",
+    answers: ["Jungle Love", "the Funky Chicken", "When Doves Cry", "The Bird"],
+    correctAnswer: "When Doves Cry"
+  },
+  {
+    question: "What sport did Prince play in high school?",
+    answers: ["Soccer", "Tennis", "Fencing", "Basketball"],
+    correctAnswer: "Basketball"
+  },
+  {
+    question: "What was Prince's choice footwear?",
+    answers: ["Reeboks, prolly cross trainers", "High heels, hey not judging", "Air Jordans, heard he liked to hoop", "Doc Martens, who wouldn't"],
+    correctAnswer: "High heel, hey not judging"
+  },
+  {
+    question: "What song did Prince dedicate to his wife?",
+    answers: ["The Most Beautiful Girl in the World", "Darling Nikki", "Insatiable", "Rasberry Beret"],
+    correctAnswer: "The Most Beautiful Girl in the World"
+  },
+  {
+    question: "Which Prince movie was a loose depiction of his real life?",
+    answers: ["Batman", "Graffiti Bridge", "Under the Cherry Moon", "Purple Rain"],
+    correctAnswer: "Purple Rain"
+  },
+  {
+    question: "Which of the following females were never accused of being romantically involved with Prince?",
+    answers: ["Vanity", "Beyonce", "Kim Bassinger", "Sheena Easton"],
+    correctAnswer: "Beyonce"
+  },
+];
 
-// function tenSeconds() {
-//   // in the element with an id of time-left add an h2 saying About 5 Seconds Left!
-//   // console log 5 seconds left
-//   $("#time-left").append("<h2>About 5 Seconds Left!</h2>");
-//   console.log("5 seconds left");
-// }
+// Variable that will hold the setInterval
+var timer;
 
-// function timeUp() {
-//   // in the element with an id of time-left add an h2 saying Time's Up!
-//   // console log done
-//   console.log("done");
-//   $("#time-left").append("<h2>Time's Up!</h2>");
-//   console.log("time is up");
+var game = {
+  correct: 0,
+  incorrect: 0,
+  counter: 120,
 
-//   //  The following line will play the audio file we linked to above:
-//   audio.play();
-// }
-// ======================================================
-// INTERVAL==============================================
-    //  Interval Demonstration
-    //  Set our number counter to 100.
-    var number = 60;
-
-    //  Variable that will hold our interval ID when we execute
-    //  the "run" function
-    var intervalId;
-
-    //  When the stop button gets clicked, run the stop function.
-    $("#stop").on("click", stop);
-
-    // //  When the resume button gets clicked, execute the run function.
-    $("#start").on("click", run);
-
-    //  The run function sets an interval
-    //  that runs the decrement function once a second.
-    //  *****BUG FIX******** 
-    //  Clearing the intervalId prior to setting our new intervalId will not allow multiple instances.
-    function run() {
-      clearInterval(intervalId);
-      intervalId = setInterval(decrement, 1000);
+  countdown: function() {
+    game.counter--;
+    $("#counter-number").html(game.counter);
+    if (game.counter === 0) {
+      alert("Time is up Sucker")
+      console.log("TIME UP");
+      game.done();
     }
+  },
 
-    //  The decrement function.
-    function decrement() {
+  start: function() {
+    timer = setInterval(game.countdown, 1000);
 
-      //  Decrease number by one.
-      number--;
+    $("#sub-wrapper").prepend(
+      "<h2>Time Remaining: <span id='counter-number'>120</span> Seconds</h2>"
+    );
 
-      //  Show the number in the #show-number tag.
-      $("#show-number").html("<h3>" +"Time Remaining:  "+ number + "</h3>");
+    $("#start").remove();
 
-
-      //  Once number hits zero...
-      if (number === 0) {
-
-        //  ...run the stop function.
-        stop();
-
-        //  Alert the user that time is up.
-        alert("Time Up!");
+    for (var i = 0; i < questions.length; i++) {
+      card.append("<h2>" + questions[i].question + "</h2>");
+      for (var j = 0; j < questions[i].answers.length; j++) {
+        card.append("<input type='radio' name='question-" + i +
+          "' value='" + questions[i].answers[j] + "''>" + questions[i].answers[j]);
       }
     }
 
-    // =================================================
-    // RANDOM SONG TO CONSOLE===========================
-    var purpleRain=["Let's Go Crazy","Take Me with U","The Beautiful Ones","Computer Blue","Darling Nikki","Baby I'm a Star"];
-    var underTheCherryMoon=["Girls & Boys","Mountains","Kiss","Anotherloverholenyohead","Sometimes It Snows in April"];
-    var batman=["The Future","Partyman","Scandalous",];
-    var graffitiBridge=["New Power Generation, Part 1","Release It","Round and Round","Thieves in the Temple"];
-    
-    var princeSoundtrack=purpleRain.concat(underTheCherryMoon,batman,graffitiBridge);
+    card.append("<button id='done'>Done</button>");
+  },
 
-    // for (var i = 0; i < princeSoundtrack.length; i++) {
-    //     // get the size of the inner array
-    //     var innerArrayLength = princeSoundtrack[i].length;
-    //     // loop the inner array
-    //     for (var j = 0; j < innerArrayLength; j++) {
-    //         // console.log(princeSoundtrack[i][j]);
-    //     }
-    // }
-    
-    var randomItem = princeSoundtrack[Math.floor(Math.random()*princeSoundtrack.length)];
-    
-    console.log(randomItem);
-    // =================================================
-    // =================================================
-    // PROVIDE SONG TO MATCH MOVIE======================
-
-    //  Show the movie in the #soundtrackSong tag.
-    $("#soundtrackSong").html("<h3>" +"Which movie is "+ randomItem +" from?"+ "</h3>");
-    //==================================================      
-    //  The stop function
-    function stop() {
-
-      //  Clears our intervalId
-      //  We just pass the name of the interval
-      //  to the clearInterval function.
-      clearInterval(intervalId);
+  done: function() {
+    var inputs = card.children("input:checked");
+    for (var i = 0; i < inputs.length; i++) {
+      if ($(inputs[i]).val() === questions[i].correctAnswer) {
+        game.correct++;
+      } else {
+        game.incorrect++;
+      }
     }
+    this.result();
+  },
 
-    //  Execute the run function.
-    run();
-    // =================================================
+  result: function() {
+    clearInterval(timer);
 
+    $("#sub-wrapper h2").remove();
 
+    card.html("<h2>All Done!</h2>");
+    card.append("<h3>Correct Answers: " + this.correct + "</h3>");
+    card.append("<h3>Incorrect Answers: " + this.incorrect + "</h3>");
+  }
+};
 
+// CLICK EVENTS
+
+$(document).on("click", "#start", function() {
+  game.start();
+});
+
+$(document).on("click", "#done", function() {
+  game.done();
+});
