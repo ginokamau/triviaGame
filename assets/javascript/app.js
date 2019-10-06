@@ -26,7 +26,7 @@ var questions = [
     correctAnswer: "Paisley Park"
   },
   {
-    question: "What is a 'foul' inspired Prince song?",
+    question: "What is a 'fowl' inspired Prince song?",
     answers: ["Jungle Love", "the Funky Chicken", "When Doves Cry", "The Bird"],
     correctAnswer: "When Doves Cry"
   },
